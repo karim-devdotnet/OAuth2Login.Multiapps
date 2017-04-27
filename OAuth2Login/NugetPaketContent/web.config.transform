@@ -1,0 +1,42 @@
+﻿<?xml version="1.0"?>
+<configuration>
+  <configSections>
+    <section name="oAuth2LoginConfig" type="OAuth2Login.Configuration.OAuth2LoginConfig, OAuth2Login.Configuration, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"/>
+  </configSections>
+  <oAuth2LoginConfig xmlns="urn:OAuth2Login.Configuration">
+    <web acceptedRedirectUrl="~/Account/LoginSuccess" failedRedirectUrl="~/Account/LoginFail" proxy="" />
+    <oauth>
+      <app name="autoprofi">
+        <oAuthSettings>
+          <add name="Google"
+               clientid="YOUR_CLIENT_ID"
+               clientsecret="YOUR_CLIENT_SECRET"
+               callbackUrl="/Account/Callback/Google?appName=autoprofi"
+               scope="https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile" />
+
+          <add name="Facebook"
+               clientid="YOUR_CLIENT_ID"
+               clientsecret="YOUR_CLIENT_SECRET"
+               callbackUrl="/Account/Callback/Facebook?appName=autoprofi"
+               scope="public_profile,user_friends,email" />
+        </oAuthSettings>
+      </app>
+      <app name="autofit">
+        <oAuthSettings>
+          <add name="Google"
+               clientid="YOUR_CLIENT_ID"
+               clientsecret="YOUR_CLIENT_SECRET"
+               callbackUrl="/Account/Callback/Google?appName=autofit"
+               scope="https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile" />
+
+          <add name="Facebook"
+               clientid="YOUR_CLIENT_ID"
+               clientsecret="YOUR_CLIENT_SECRET"
+               callbackUrl="/Account/Callback/Facebook?appName=autofit"
+               scope="public_profile,user_friends,email" />
+        </oAuthSettings>
+      </app>
+    </oauth>
+  </oAuth2LoginConfig>
+
+</configuration>
